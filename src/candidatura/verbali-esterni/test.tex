@@ -1,0 +1,362 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{libertinus}
+\usepackage{amssymb}
+\usepackage[a4paper,top=25mm,bottom=25mm,left=22mm,right=22mm,headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{tabularx,array}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{bfblue}{HTML}{1B3F9E}
+\definecolor{bfrow}{HTML}{F2F5FC}
+\definecolor{bfline}{HTML}{C9D1E6}
+\definecolor{bfhead}{HTML}{2E6BE6}
+\newcommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\setlist{topsep=2pt}
+\setlist[itemize]{leftmargin=1.3em,label=\textbullet}
+\setlist[enumerate]{leftmargin=1.6em}
+\setlength{\parindent}{0pt}
+\sloppy
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.45}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\titleformat{\section}{\LARGE\bfseries\color{bfblue}\raggedright}{\thesection.}{0.3em}{}[{\color{bfblue}\vspace{-2pt}\titlerule[0.9pt]}]
+\titleformat{\subsection}{\Large\bfseries\color{bfblue}\raggedright}{\thesubsection.}{0.3em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\raggedright}{\thesubsubsection.}{0.3em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\titlespacing*{\subsubsection}{0pt}{10pt}{3pt}
+
+% Indice: numeri con punto, trattini fino al numero di pagina
+\contentsmargin{2.2em}
+\newcommand{\bfleader}{\titlerule*[0.32em]{\textendash}}
+\titlecontents{section}[0pt]{\addvspace{5pt}\large\bfseries}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+\titlecontents{subsection}[1.2em]{\addvspace{0pt}}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+\titlecontents{subsubsection}[2.4em]{\addvspace{0pt}}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily\bfseries\color{bfhead}\textls[120]{BENDING FORKS}}
+\fancyhead[R]{\footnotesize\sffamily Riunione con Vimar SpA}
+\fancyfoot[C]{\small Pagina \thepage}
+\renewcommand{\headrulewidth}{0.9pt}
+
+\newcommand{\bftable}{\rowcolors{2}{bfrow}{white}}
+\usepackage{etoolbox}
+\AtBeginEnvironment{tabularx}{\bftable}
+\graphicspath{{../../InfoGruppo/}{../InfoGruppo/}{InfoGruppo/}}
+
+\begin{document}
+
+% ---------- Copertina ----------
+\begin{titlepage}
+\centering
+\vspace*{4mm}
+\includegraphics[width=105mm]{Assets/logo-bending-forks-trasparente.png}\\[4mm]
+\underline{bending.forks.swe@gmail.com}
+
+\vspace{48mm}
+{\fontsize{27}{32}\selectfont\bfseries Riunione con Vimar SpA\par}
+
+\vfill
+\begin{tabular}[t]{r|l}
+\textbf{Responsabile} & Aldo Toffoli\\
+\textbf{Redattore} & Lorenzo Milanese\\
+\textbf{Verificatore} & Luca Stangherlin\\
+\end{tabular}
+\hspace{14mm}
+\begin{tabular}[t]{r|l}
+\textbf{Versione} & 1.0 \\
+\textbf{Tipo} & Verbale Esterno \\
+\textbf{Destinatari} & \emph{Vimar SpA} \\
+ & \emph{Prof. Tullio Vardanega} \\
+ & \emph{Prof. Riccardo Cardin} \\
+\end{tabular}
+
+\vspace{12mm}
+{\large\emph{\textbf{Abstract dei contenuti:}}}\\[1mm]
+\begin{minipage}{150mm}\centering Riunione virtuale con l'azienda Vimar SpA tenutasi in data 22 ottobre 2026, per discutere il capitolato C1 AURA da loro proposto.\end{minipage}
+\vspace*{6mm}
+\end{titlepage}
+
+% ---------- Indice ----------
+\vspace*{2mm}
+{\fontsize{22}{26}\selectfont\bfseries Indice\par}
+\vspace{6mm}
+\makeatletter\@starttoc{toc}\makeatother
+\newpage
+
+% ---------- Contenuto ----------
+\hypertarget{registro-delle-versioni}{%
+\section{Registro delle versioni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=0.60\hsize\raggedright\arraybackslash}X>{\hsize=0.70\hsize\raggedright\arraybackslash}X>{\hsize=1.10\hsize\raggedright\arraybackslash}X>{\hsize=1.60\hsize\raggedright\arraybackslash}X}
+\rowcolor{bfblue}\textcolor{white}{\textbf{Versione}} & \textcolor{white}{\textbf{Data}} & \textcolor{white}{\textbf{Autore}} & \textcolor{white}{\textbf{Descrizione}} \\
+1.0 & 24/10/2026 & Lorenzo Milanese & Prima stesura a partire dalle presentazioni e risposte fornite da Vimar \\ \arrayrulecolor{bfline}\hline
+1.0 & 26/10/2026 & Luca Stangherlin & Verifica e approvazione del documento \\ \arrayrulecolor{bfline}\hline
+1.1 & 27/10/2026 & Lorenzo Milanese & Correzione del documento secondo le indicazioni fornite dall'azienda Vimar \\ \arrayrulecolor{bfline}\hline
+1.1 & 27/10/2026 & Luca Stangherlin & Verifica e approvazione del documento \\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{informazioni-generali}{%
+\section{Informazioni generali}}
+
+\hypertarget{durata-e-luogo}{%
+\subsection{Durata e luogo}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Data:} 22 ottobre 2026
+\item
+  \textbf{Inizio:} 16:00
+\item
+  \textbf{Fine:} 17:00
+\item
+  \textbf{Modalità:} virtuale, tramite Microsoft Teams
+\end{itemize}
+
+Il seguente documento contiene il resoconto della riunione esterna del gruppo \emph{Bending Forks} con l\textquotesingle azienda \emph{Vimar SpA} relativa al capitolato C1 \emph{AURA}.
+
+\hypertarget{partecipanti}{%
+\subsection{Partecipanti}}
+
+\hypertarget{interni}{%
+\subsubsection{Interni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}}
+\rowcolor{bfblue}\textcolor{white}{\textbf{Nome e Cognome}} & \textcolor{white}{\textbf{Presente}} & \textcolor{white}{\textbf{Assente}} \\
+Marco Beltrame & $\blacksquare$  & $\square$ \\ \arrayrulecolor{bfline}\hline
+Lorenzo Milanese & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Filippo Rampazzo & $\square$ & $\blacksquare$ \\ \arrayrulecolor{bfline}\hline
+Nicholas Salmaso & $\square$ & $\blacksquare$ \\ \arrayrulecolor{bfline}\hline
+Luca Stangherlin & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Aldo Toffoli & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Matteo Wu & $\square$ & $\blacksquare$ \\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{esterni}{%
+\subsubsection{Esterni}}
+
+\begin{itemize}
+\tightlist
+\item
+  Mariano Sciacco (\emph{Vimar SpA})
+\item
+  Domenico Bevilacqua (\emph{Vimar SpA})
+\end{itemize}
+
+\vspace{25mm}
+  
+\hypertarget{contenuto-della-riunione}{%
+\section{Contenuto della riunione}}
+
+\hypertarget{ordine-del-giorno}{%
+\subsection{Ordine del giorno}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Domande e risposte sui temi emersi (30--40')}: trattazione e commento congiunto dei 14 temi emersi dalle domande poste dai gruppi.
+\item
+  \textbf{Q\&A live (20--25')}: sessione dedicata alle domande libere dei partecipanti, sia tramite il canale Q\&A di Microsoft Teams sia a voce su alzata di mano.
+\item
+  \textbf{Prossimi passi (5')}: indicazioni sulla redazione, invio e approvazione con firma digitale dei verbali esterni di riunione.
+\end{enumerate}
+
+\hypertarget{riassunto}{%
+\subsection{Riassunto}}
+
+L\textquotesingle incontro online ha visto la partecipazione dei referenti aziendali Mariano Sciacco e Domenico Bevilacqua e dei diversi gruppi interessati al capitolato C1 \emph{AURA}. L\textquotesingle azienda ha raccolto preventivamente le domande poste dagli 8 gruppi interessati (incluso \emph{Bending Forks}), aggregandole in quattro temi chiave.
+
+I referenti hanno illustrato come la soluzione richiesta sia focalizzata principalmente sul \emph{back-end} e sullo sviluppo di un server \emph{MCP} conforme agli standard, demandando l\textquotesingle interfaccia utente ai servizi \emph{LLM} commerciali esistenti (es. Claude, ChatGPT, Microsoft Copilot). Hanno chiarito che per l\textquotesingle autenticazione è mandatorio un flusso OAuth2 verso \emph{MyVimar} in cui i token di accesso non transitino mai verso il servizio di intelligenza artificiale. È stata confermata la piena libertà di scelta del linguaggio (con una preferenza suggerita per Python con FastMCP), la fornitura di un kit fisico collegato via cloud a un account amministratore e la possibilità di simulare le API tramite mock OpenAPI (es. Prism) per lavorare in parallelo senza blocchi. Infine, sono state delineate le modalità di svolgimento degli incontri di SAL e le linee guida per la stesura e l\textquotesingle approvazione del presente verbale.
+
+\hypertarget{domande-e-risposte}{%
+\subsection{Domande e risposte}}
+
+\hypertarget{quale-linguaggio-e-sdk-usare-per-lmcp}{%
+\subsubsection{\texorpdfstring{Quale linguaggio e SDK usare per l'MCP?}{Quale linguaggio e SDK usare per l'MCP?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Libertà totale sul linguaggio:} Non vi sono vincoli rigidi da parte dell\textquotesingle azienda stakeholder; il gruppo può scegliere in autonomia tra Python, Java o TypeScript in base alle proprie competenze interne ed esperienze pregresse.
+\item \textbf{Python + FastMCP consigliato:} È l\textquotesingle SDK ufficiale suggerito all\textquotesingle interno del capitolato e rappresenta lo stack tecnologico su cui l\textquotesingle azienda proponente può offrire il supporto tecnico più mirato ed efficace.
+\item \textbf{Omogeneità di SDK per client e server:} L\textquotesingle impiego del medesimo SDK sia sul versante server che su quello client facilita notevolmente la scrittura e l\textquotesingle esecuzione dei test d\textquotesingle integrazione tra le parti.
+\item \textbf{Suggerimento aziendale:} Se il team possiede una solida preparazione in Java, questa opzione è ritenuta valida; tuttavia, Python resta il percorso più rapido ed efficiente per avviare lo sviluppo.
+\end{itemize}
+
+\hypertarget{che-ruolo-deve-avere-il-client-mcp}{%
+\subsubsection{\texorpdfstring{Che ruolo deve avere il client MCP?}{Che ruolo deve avere il client MCP?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Controllo e utilizzo da parte dell'LLM:} L\textquotesingle obiettivo finale è consentire al modello di linguaggio di interrogare ed eseguire le funzioni esposte dal server MCP. I client commerciali moderni (come Claude o ChatGPT) integrano già un client MCP nativo.
+\item \textbf{Finalità del client di progetto:} Lo sviluppo di un client ad hoc serve prevalentemente per agevolare l\textquotesingle esecuzione dei test d\textquotesingle integrazione. Eventuali interfacce CLI/TUI o estensioni per VS Code costituiscono componenti puramente opzionali; il gruppo è libero di utilizzare strumenti come Claude Code via CLI e Codex CLI.
+\item \textbf{Ripartizione di responsabilità ed errori:} La separazione dei compiti nella gestione degli errori (ad esempio, la mancata raggiungibilità di un attuatore) tra server e client costituisce parte integrante delle scelte architetturali demandate al gruppo.
+\item \textbf{Suggerimento aziendale:} Una volta implementato un server MCP solido, l\textquotesingle automazione avanzata non richiede necessariamente componenti dedicati, ma può essere ottenuta definendo un prompt o una skill apposita. Il focus prioritario rimane il controllo puntuale in lettura e scrittura dei dispositivi fisici tramite API.
+\end{itemize}
+
+\hypertarget{cosa-diamo-allutente-finale-per-collegare-il-suo-llm}{%
+\subsubsection{\texorpdfstring{Cosa diamo all\textquotesingle utente finale per collegare il suo LLM?}{Cosa diamo all'utente finale per collegare il suo LLM?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Assenza di frontend proprietario:} Non è richiesto lo sviluppo di un\textquotesingle app nativa o di un sito web; il sistema è interamente \emph{back-end}. L\textquotesingle utente finale interagirà con il sistema sfruttando le interfacce conversazionali già fornite dai vari provider di LLM.
+\item \textbf{Ambiente locale per sviluppo e server remoto per rilascio:} Per le fasi di sviluppo, debug e test interni è consigliato adottare un server MCP locale. Per l\textquotesingle utente finale sarà invece necessario disporre di un server MCP remoto con URL pubblicamente raggiungibile e protetto da autenticazione, fruibile dal servizio AI via web, desktop e mobile.
+\item \textbf{Supporto ai servizi AI commerciali:} È sufficiente che la soluzione si interfacci con un singolo servizio commerciale a scelta; il supporto opzionale a molteplici servizi è apprezzato, ma non richiede alcuna interfaccia grafica dedicata di selezione.
+\item \textbf{Suggerimento aziendale:} La scelta di provider LLM differenti da parte dei diversi gruppi (Claude, ChatGPT, Copilot) consentirà all\textquotesingle azienda di mettere a confronto e valutare approcci architetturali alternativi.
+\end{itemize}
+
+\hypertarget{quali-risorse-llm-e-cloud-avremo-cosa-serve-per-la-consegna}{%
+\subsubsection{\texorpdfstring{Quali risorse LLM e cloud avremo? Cosa serve per la consegna?}{Quali risorse LLM e cloud avremo? Cosa serve per la consegna?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Fruizione degli LLM:} Per il capitolato è possibile avvalersi delle funzionalità gratuite o destinate agli studenti offerte dalle piattaforme commerciali (ad esempio connettori personalizzati di Claude o GitHub Copilot tramite GitHub Student Developer Pack).
+\item \textbf{Infrastruttura AWS opzionale:} L\textquotesingle accesso a risorse cloud AWS è opzionale: qualora richiesto e motivato, Vimar potrà concedere l\textquotesingle accesso a un insieme ristretto di servizi AWS e, se necessario, una chiave API per prove con gli LLM (da concordare all'avvio del progetto).
+\item \textbf{Modalità di consegna del prodotto:} Ai fini della consegna e della valutazione finale è sufficiente che l'intera architettura sia eseguibile in locale tramite container Docker.. Durante il collaudo conclusivo, i referenti si renderanno disponibili al supporto e alla cofnigurazione della soluzione su AWS o su un server dedicato.
+\end{itemize}
+
+\hypertarget{come-funziona-lautenticazione-myvimar-in-chat}{%
+\subsubsection{\texorpdfstring{Come funziona l\textquotesingle autenticazione MyVimar in chat?}{Come funziona l'autenticazione MyVimar in chat?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Profilazione e accesso agli impianti:} L\textquotesingle interazione richiede un account \emph{MyVimar} valido abilitato all\textquotesingle accesso agli impianti. Ciascun utente deve poter visualizzare e operare unicamente sui propri impianti associati, garantendo il completo isolamento rispetto a impianti di terzi.
+\item \textbf{Riservatezza dei token di accesso:} Il server MCP gestisce l\textquotesingle associazione tra l\textquotesingle identità dell\textquotesingle utente e l\textquotesingle autorizzazione ottenuta via protocollo OAuth2 per dialogare con le API Vimar. Il servizio LLM esterno non deve in nessun caso venire a conoscenza dei token di autenticazione.
+\item \textbf{Progettazione del flusso di login:} La sequenza di passaggi attraverso cui l\textquotesingle utente immette le proprie credenziali (es. link di autorizzazione aperto nel browser, concessione esplicita di permessi in lettura/scrittura) costituisce oggetto di analisi e progettazione a carico del team.
+\item \textbf{Suggerimento aziendale:} Rispettare rigorosamente i criteri di privacy: le informazioni di stato dell\textquotesingle impianto possono pervenire al modello per elaborare la risposta, mentre le informazioni di sicurezza sensibili (token, segreti) non devono mai essere trasmesse all\textquotesingle LLM.
+\end{itemize}
+
+\hypertarget{comandi-critici-chi-blocca-le-richieste-sbagliate}{%
+\subsubsection{\texorpdfstring{Comandi critici: chi blocca le richieste sbagliate?}{Comandi critici: chi blocca le richieste sbagliate?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Comportamento delle API aziendali:} Le API Vimar eseguono operazioni di lettura e scrittura agendo come quelle di una qualsiasi applicazione; non implementano meccanismi di validazione o filtri specifici per richieste originate da un LLM.
+\item \textbf{Richiesta di conferma per operazioni distruttive o massive:} Mentre le letture di stato possono essere eseguite direttamente, per le operazioni di scrittura ad alto impatto (es. "spegni tutte le luci dell'edificio") è opportuno prevedere un passaggio esplicito di conferma da parte dell\textquotesingle utente.
+\item \textbf{Configurazione granulare dei permessi:} Il protocollo KNX IoT permette di impostare \emph{scope} di autorizzazione differenti (ad es. permessi di sola lettura, lettura e scrittura completa, o accesso ristretto a un sottoinsieme di dispositivi).
+\item \textbf{Suggerimento aziendale:} L\textquotesingle agente deve essere progettato in modo da interpretare correttamente il contesto della richiesta e invocare il tool appropriato. L\textquotesingle implementazione di guardrail o skill di sicurezza aggiuntive può essere valutata in fase di analisi dei requisiti.
+\end{itemize}
+
+\hypertarget{polling-o-subscription-per-lo-stato-e-le-notifiche}{%
+\subsubsection{\texorpdfstring{Polling o Subscription per lo stato e le notifiche?}{Polling o Subscription per lo stato e le notifiche?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Adozione del Polling:} Come chiarito dall'azienda, l'interrogazione tramite polling periodico verso le API per la gestione dei dispositivi è considerata una soluzione pienamente accettabile e sufficiente per le finalità del progetto.
+\item \textbf{Integrazione via Webhook:} I servizi LLM standard di norma non dispongono di meccanismi nativi per ricevere notifiche asincrone innescate da un webhook esterno, sebbene sia possibile investigare se specifici provider offrano tale funzionalità e in caso valutarli come possibili requisiti \emph{nice-to-have} od opzionali.
+\item \textbf{Inquadramento delle Subscription:} Il caso d\textquotesingle uso avanzato \#21 ("avvisami quando si verifica un evento...") è classificato come requisito \emph{nice-to-have} e può essere implementato sotto forma di azione programmatica.
+\item \textbf{Suggerimento aziendale:} I meccanismi di subscription sono indicati per eventi sporadici e non temporalmente prevedibili; si raccomanda di affrontarli unicamente a seguito del completamento e della stabilizzazione di tutti i casi base.
+\end{itemize}
+
+\hypertarget{quali-richieste-deve-saper-gestire-lassistente}{%
+\subsubsection{\texorpdfstring{Quali richieste deve saper gestire l'assistente?}{Quali richieste deve saper gestire l'assistente?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Flessibilità espressiva:} Gli utenti finali non formuleranno i comandi utilizzando le esatte frasi indicate negli esempi; l\textquotesingle assistente LLM deve essere capace di interpretare sinonimi, variazioni sintattiche e richieste parzialmente ambigue.
+\item \textbf{Esempi come linea guida:} I casi d\textquotesingle uso elementari e avanzati riportati nel capitolato rappresentano scenari indicativi e non esaustivi, fungendo da base di partenza per l\textquotesingle individuazione dei requisiti software.
+\item \textbf{Valorizzazione di nuove casistiche:} L\textquotesingle ideazione e la gestione di interazioni innovative non contemplate inizialmente sono considerate elementi \emph{nice-to-have} di grande valore da discutere con i referenti.
+\item \textbf{Suggerimento aziendale:} Si suggerisce di utilizzare un modello di linguaggio per riformulare i casi della test list, sottoponendoli a diversi LLM per testare e accrescere la robustezza dell\textquotesingle assistente.
+\end{itemize}
+
+\hypertarget{come-si-usa-e-si-condivide-il-kit-di-impianto}{%
+\subsubsection{\texorpdfstring{Come si usa e si condivide il kit di impianto?}{Come si usa e si condivide il kit di impianto?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Connettività su rete cloud:} Il kit fisico domotico si connette alla rete Wi-Fi locale ed è gestito interamente via cloud tramite le API KNX IoT, senza richiedere collegamenti USB fisici ai PC degli sviluppatori né configurazioni di VPN aziendali.
+\item \textbf{Unico nodo fisico, accesso distribuito:} È sufficiente che un unico componente del gruppo mantenga il kit alimentato e connesso alla rete domestica; tutti gli altri componenti del team possono operare contemporaneamente da remoto interfacciandosi con le API cloud.
+\item \textbf{Gestione degli account:} Vimar fornirà un account con privilegi di amministrazione; sarà possibile registrare e associare profili addizionali previo inserimento sul portale \emph{MyVimar}.
+\item \textbf{Suggerimento aziendale:} Il modo più immediato per apprendere la struttura del modello dati consiste nel premere fisicamente un comando sul kit e analizzare le corrispondenti variazioni di stato notificate via API.
+\end{itemize}
+
+\hypertarget{esiste-un-ambiente-simulato-per-sviluppare-in-parallelo}{%
+\subsubsection{\texorpdfstring{Esiste un ambiente simulato per sviluppare in parallelo?}{Esiste un ambiente simulato per sviluppare in parallelo?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Server mock da specifica OpenAPI:} Utilizzando il file di specifica YAML OpenAPI di KNX IoT unitamente a tool open source quali ad esempio \emph{Prism}, è possibile istanziare in locale server di mock capaci di restituire payload conformi e realistici.
+\item \textbf{Piattaforma demo online:} Nella documentazione dedicata agli integratori è resa disponibile una demo online KNX IoT provvista di API di simulazione attive e consultabili.
+\item \textbf{Discrepanze concettuali:} I simulatori software non replicano fedelmente tutte le peculiarità del concetto di "impianto" (\emph{plant}) proprio dell\textquotesingle ecosistema Vimar; pertanto, le verifiche conclusive dovranno sempre avvenire a fronte del kit reale.
+\item \textbf{Suggerimento aziendale:} Impiegare i mock per le attività quotidiane di sviluppo parallelo (prevenendo conflitti e colli di bottiglia tra membri) e riservare il kit hardware alle validazioni \emph{end-to-end}.
+\end{itemize}
+
+\hypertarget{test-cosa-misurano-gli-e2e-e-come-si-gestisce-la-ci}{%
+\subsubsection{\texorpdfstring{Test: cosa misurano gli E2E e come si gestisce la CI?}{Test: cosa misurano gli E2E e come si gestisce la CI?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Copertura dei test E2E sui requisiti:} L\textquotesingle obiettivo dell\textquotesingle 80\% di copertura per i test \emph{End-to-End} è calcolato sulla totalità dei requisiti di progetto concordati. La lista di scenari di test nel capitolato copre le interazioni base dell\textquotesingle utente con l\textquotesingle assistente AI.
+\item \textbf{Mock degli LLM nelle pipeline di CI:} All\textquotesingle interno dei test automatizzati (unitari e di integrazione) integrati nella Continuous Integration è vivamente raccomandato simulare le risposte dell\textquotesingle LLM tramite mock, assicurando esecuzioni deterministiche, riproducibili e prive di costi di computazione.
+\item \textbf{Copertura di unità e integrazione:} Per tali livelli di test fa fede la classica metrica di \emph{code coverage}, con una soglia minima prefissata al 75\% e un traguardo ottimale superiore al 90\%.
+\item \textbf{Suggerimento aziendale:} Poiché un vero modello linguistico manifesta un comportamento intrinsecamente non deterministico, rischiando di far fallire casualmente le pipeline, se ne sconsiglia caldamente l\textquotesingle invocazione diretta nei job di CI.
+\end{itemize}
+
+\hypertarget{quali-sono-le-priorituxe0-e-cosa-aspettarsi-dal-poc}{%
+\subsubsection{\texorpdfstring{Quali sono le priorità e cosa aspettarsi dal PoC?}{Quali sono le priorità e cosa aspettarsi dal PoC?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Dalle esigenze di business ai requisiti formali:} Il documento di capitolato sintetizza bisogni commerciali generali; spetta interamente al gruppo di sviluppo dedurre, specificare e gerarchizzare i requisiti dettagliati durante la fase di analisi.
+\item \textbf{Obiettivi del Proof of Concept (PoC):} Il prototipo iniziale deve mostrare un server MCP operativo in grado di assolvere a 2–3 scenari basilari: login e autenticazione all\textquotesingle impianto, restituzione della lista degli impianti abbinati e lettura/modifica dello stato di un attuatore di illuminazione.
+\item \textbf{Valore dei requisiti nice-to-have vs opzionali:} Nessuna delle due categorie è vincolante per l\textquotesingle accettazione; tuttavia, un requisito di tipo \emph{nice-to-have} ben rifinito ed efficace offre all\textquotesingle azienda maggior valore rispetto a un requisito opzionale convenzionale.
+\item \textbf{Suggerimento aziendale:} Costruire la gerarchia dei requisiti partendo rigidamente dai vincoli obbligatori e dai casi d\textquotesingle uso essenziali, riservando valutazioni su connettori o skill aggiuntive alle fasi successive di analisi e scouting.
+\end{itemize}
+
+\hypertarget{cosa-conviene-studiare-subito-quali-difficoltuxe0-negli-anni-scorsi}{%
+\subsubsection{\texorpdfstring{Cosa conviene studiare subito? Quali difficoltà negli anni scorsi?}{Cosa conviene studiare subito? Quali difficoltà negli anni scorsi?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Tempistiche di auto-formazione:} Non vi sono vincoli temporali rigidi prima dell'assegnazione ufficiale; nondimeno, acquisire familiarità preliminare con il dominio tecnologico permette una scelta consapevole del capitolato.
+\item \textbf{Fonti di studio consigliate:} Si raccomanda di consultare preliminarmente le specifiche KNX IoT per integratori, le peculiarità delle primitive proprietarie Vimar e la documentazione ufficiale dell\textquotesingle architettura Model Context Protocol.
+\item \textbf{Criticità riscontrate nelle edizioni pregresse:} Le maggiori problematiche emerse in passato hanno riguardato: una comprensione approssimativa o ambigua dei requisiti nelle settimane iniziali, una documentazione interna disordinata e severi colli di bottiglia dovuti a tentativi di eseguire modelli LLM localmente.
+\item \textbf{Suggerimento aziendale:} Mantenere un dialogo costante con i referenti tecnici per dissipare qualunque dubbio e non optare per modelli in esecuzione locale, preferendo servizi cloud commerciali accessibili via API.
+\end{itemize}
+
+\hypertarget{come-si-svolgono-sal-e-incontri-durante-il-progetto}{%
+\subsubsection{\texorpdfstring{Come si svolgono SAL e incontri durante il progetto?}{Come si svolgono SAL e incontri durante il progetto?}}}
+
+\begin{itemize}
+\tightlist
+\item \textbf{Modalità dei SAL:} I meeting periodici di Avanzamento Lavori (SAL) si svolgono ordinariamente da remoto tramite Microsoft Teams; qualora il team ne manifesti la preferenza, vi è disponibilità a ospitare gli incontri in presenza presso le sale riunioni della sede Vimar.
+\item \textbf{Incontri in presenza e dimostrazioni tecniche:} Sono richiesti due incontri obbligatori in sede: il kick-off per la consegna fisica del kit domotico e il collaudo conclusivo del sistema. Sono inoltre previste circa due sessioni dimostrative congiunte con il reparto R\&D: una a metà percorso in occasione del PoC e una alla chiusura del progetto (MVP).
+\item \textbf{Supporto aziendale:} L\textquotesingle azienda assicura massima disponibilità per approfondimenti di natura architetturale, tecnica o di aderenza alle esigenze espresse, declinando invece revisioni formali sugli aspetti burocratici o accademici dei documenti di progetto.
+\item \textbf{Suggerimento aziendale:} Eventuali richieste di sessioni formative o incontri con specialisti di team specifici (es. esperti di sicurezza o protocolli) possono essere concordate con un preavviso di 1–2 settimane.
+\end{itemize}
+
+\hypertarget{decisioni-e-azioni}{%
+\section{Decisioni e azioni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=0.511\hsize\raggedright\arraybackslash}X>{\hsize=1.675\hsize\raggedright\arraybackslash}X>{\hsize=0.814\hsize\raggedright\arraybackslash}X}
+\rowcolor{bfblue}\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Descrizione}} & \textcolor{white}{\textbf{Assegnatario}} \\
+DEC-001 & Inviare il verbale via \emph{email} all'indirizzo da cui è arrivata la richiesta, per la firma dell'azienda & Filippo Rampazzo \\ \arrayrulecolor{bfline}\hline
+DEC-002 & Integrare le risposte ricevute nella valutazione dei capitolati & Team Bending Forks\\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{conclusioni}{%
+\section{Conclusioni}}
+
+Il gruppo \emph{Bending Forks} esprime il proprio sentito ringraziamento ai referenti di \emph{Vimar SpA}, Mariano Sciacco e Domenico Bevilacqua, per la chiarezza espositiva, la ricchezza del materiale condiviso e la costante disponibilità dimostrata verso tutti i team. I chiarimenti tecnici e organizzativi forniti costituiscono elementi determinanti per orientare in maniera consapevole e strutturata le scelte del gruppo in vista della candidatura ufficiale ai capitolati d\textquotesingle appalto.
+
+\end{document}
