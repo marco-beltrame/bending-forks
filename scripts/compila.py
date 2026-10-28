@@ -46,7 +46,7 @@ def compila(tex: Path, dest: Path) -> bool:
     dest.parent.mkdir(parents=True, exist_ok=True)
     build = OUT / "_build" / tex.relative_to(SRC).parent
     build.mkdir(parents=True, exist_ok=True)
-    env = dict(os.environ, TEXINPUTS=f"{tex.parent}//:{COMUNE}//:")
+    env = dict(os.environ, TEXINPUTS=os.pathsep.join([f"{tex.parent}//", f"{COMUNE}//", ""]))
     cmd = ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", f"-output-directory={build}", tex.name]
     for _ in range(2):  # due passaggi per indice e riferimenti
         r = subprocess.run(cmd, cwd=tex.parent, env=env, capture_output=True, text=True)
