@@ -1,6 +1,8 @@
 # Bending Forks · Gruppo 15
 
 Sito e documentazione del gruppo 15 *Bending Forks* (Ingegneria del Software 2026/27, Università di Padova).
+Sito: https://marco-beltrame.github.io/bending-forks/
+
 Ad ogni push su `main` una GitHub Action compila i sorgenti LaTeX e pubblica il sito su GitHub Pages.
 
 ## Struttura

@@ -6,7 +6,7 @@ window.SITO = {
     nome: "Bending Forks",
     numero: 15,
     email: "bending.forks.swe@gmail.com",
-    github: "", // es. "https://github.com/bending-forks"
+    github: "https://github.com/marco-beltrame/bending-forks",
     corso: "Ingegneria del Software · A.A. 2026/27 · Università degli Studi di Padova",
   },
 
