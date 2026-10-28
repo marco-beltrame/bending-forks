@@ -1,0 +1,315 @@
+%! con: Uranion
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{libertinus}
+\usepackage{amssymb}
+\usepackage[a4paper,top=25mm,bottom=25mm,left=22mm,right=22mm,headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{tabularx,array}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{bfblue}{HTML}{1B3F9E}
+\definecolor{bfrow}{HTML}{F2F5FC}
+\definecolor{bfline}{HTML}{C9D1E6}
+\definecolor{bfhead}{HTML}{2E6BE6}
+% Segnaposto ancora da compilare (in rosso)
+\newcommand{\ph}[1]{\textcolor{red}{[#1]}}
+\newcommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\setlist{topsep=2pt}
+\setlist[itemize]{leftmargin=1.3em,label=\textbullet}
+\setlist[enumerate]{leftmargin=1.6em}
+\setlength{\parindent}{0pt}
+\sloppy
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.45}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\titleformat{\section}{\LARGE\bfseries\color{bfblue}\raggedright}{\thesection.}{0.3em}{}[{\color{bfblue}\vspace{-2pt}\titlerule[0.9pt]}]
+\titleformat{\subsection}{\Large\bfseries\color{bfblue}\raggedright}{\thesubsection.}{0.3em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\raggedright}{\thesubsubsection.}{0.3em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\titlespacing*{\subsubsection}{0pt}{10pt}{3pt}
+
+% Indice: numeri con punto, trattini fino al numero di pagina
+\contentsmargin{2.2em}
+\newcommand{\bfleader}{\titlerule*[0.32em]{\textendash}}
+\titlecontents{section}[0pt]{\addvspace{5pt}\large\bfseries}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+\titlecontents{subsection}[1.2em]{\addvspace{0pt}}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+\titlecontents{subsubsection}[2.4em]{\addvspace{0pt}}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily\bfseries\color{bfhead}\textls[120]{BENDING FORKS}}
+\fancyhead[R]{\footnotesize\sffamily Riunione con Uranion}
+\fancyfoot[C]{\small Pagina \thepage}
+\renewcommand{\headrulewidth}{0.9pt}
+
+\newcommand{\bftable}{\rowcolors{2}{bfrow}{white}}
+\usepackage{etoolbox}
+\AtBeginEnvironment{tabularx}{\bftable}
+\graphicspath{{../../InfoGruppo/}{../InfoGruppo/}{InfoGruppo/}}
+
+\begin{document}
+
+% ---------- Copertina ----------
+\begin{titlepage}
+\centering
+\vspace*{4mm}
+\includegraphics[width=105mm]{logo-bending-forks-trasparente.png}\\[4mm]
+\underline{bending.forks.swe@gmail.com}
+
+\vspace{48mm}
+{\fontsize{27}{32}\selectfont\bfseries Riunione con Uranion\par}
+
+\vfill
+\begin{tabular}[t]{r|l}
+\textbf{Responsabile} & \ph{Nome Cognome}\\
+\textbf{Redattore} & Marco Beltrame\\
+\textbf{Verificatore} & \ph{Nome Cognome}\\
+\end{tabular}
+\hspace{14mm}
+\begin{tabular}[t]{r|l}
+\textbf{Versione} & 1.1.0 \\
+\textbf{Tipo} & Verbale Esterno \\
+\textbf{Destinatari} & \emph{Uranion EMEA LTD} \\
+ & \emph{Prof. Tullio Vardanega} \\
+ & \emph{Prof. Riccardo Cardin} \\
+\end{tabular}
+
+\vspace{12mm}
+{\large\emph{\textbf{Abstract dei contenuti:}}}\\[1mm]
+\begin{minipage}{150mm}\centering Resoconto della riunione esterna, in forma congiunta con altri gruppi candidati, tra il gruppo Bending Forks e l'azienda Uranion del giorno 21/10/2026, riguardante il capitolato C3 Fossdot.\end{minipage}
+\vspace*{6mm}
+\end{titlepage}
+
+% ---------- Indice ----------
+\vspace*{2mm}
+{\fontsize{22}{26}\selectfont\bfseries Indice\par}
+\vspace{6mm}
+\makeatletter\@starttoc{toc}\makeatother
+\newpage
+
+% ---------- Contenuto ----------
+\hypertarget{registro-delle-versioni}{%
+\section{Registro delle versioni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=0.60\hsize\raggedright\arraybackslash}X>{\hsize=0.70\hsize\raggedright\arraybackslash}X>{\hsize=1.10\hsize\raggedright\arraybackslash}X>{\hsize=1.60\hsize\raggedright\arraybackslash}X}
+\rowcolor{bfblue}\textcolor{white}{\textbf{Versione}} & \textcolor{white}{\textbf{Data}} & \textcolor{white}{\textbf{Autore}} & \textcolor{white}{\textbf{Descrizione}} \\
+1.0.0 & 25/10/2026 & Marco Beltrame & Creazione e redazione iniziale del documento \\ \arrayrulecolor{bfline}\hline
+1.1.0 & 26/10/2026 & Marco Beltrame & Riorganizzazione del documento secondo la struttura comune dei verbali esterni \\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{informazioni-generali}{%
+\section{Informazioni generali}}
+
+\hypertarget{durata-e-luogo}{%
+\subsection{Durata e luogo}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Data:} 2026-10-21
+\item
+  \textbf{Inizio:} 14:30
+\item
+  \textbf{Fine:} 15:45
+\item
+  \textbf{Modalità:} virtuale, tramite Google Meet
+\end{itemize}
+
+Il seguente documento contiene il resoconto della riunione esterna del gruppo \emph{Bending Forks} con l\textquotesingle azienda \emph{Uranion}. L\textquotesingle incontro è stato organizzato dall\textquotesingle azienda in forma congiunta con tutti i gruppi interessati al capitolato: erano presenti anche altri gruppi candidati, tra cui \emph{ByteClub} e \emph{Hex4Dev}.
+
+\hypertarget{partecipanti}{%
+\subsection{Partecipanti}}
+
+\hypertarget{interni}{%
+\subsubsection{Interni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}}
+\rowcolor{bfblue}\textcolor{white}{\textbf{Nome e Cognome}} & \textcolor{white}{\textbf{Presente}} & \textcolor{white}{\textbf{Assente}} \\
+Marco Beltrame & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Lorenzo Milanese & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Filippo Rampazzo & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Nicholas Salmaso & $\square$ & $\blacksquare$ \\ \arrayrulecolor{bfline}\hline
+Luca Stangherlin & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Aldo Toffoli & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Matteo Wu & $\square$ & $\blacksquare$ \\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{esterni}{%
+\subsubsection{Esterni}}
+
+\begin{itemize}
+\tightlist
+\item
+  Giacomo Cariello, referente (\emph{Uranion})
+\item
+  Niccolò Campana, rappresentante (\emph{Uranion})
+\end{itemize}
+
+\hypertarget{contenuto-della-riunione}{%
+\section{Contenuto della riunione}}
+
+\hypertarget{ordine-del-giorno}{%
+\subsection{Ordine del giorno}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Risposte dell\textquotesingle azienda alle domande inviate dal gruppo \emph{Bending Forks}
+\item
+  Risposte alle domande inviate dagli altri gruppi
+\item
+  Domande aperte dei partecipanti
+\item
+  Presentazione dell\textquotesingle azienda, origine del progetto e passi successivi
+\item
+  Varie ed eventuali
+\end{enumerate}
+
+\hypertarget{domande-e-risposte-del-gruppo}{%
+\subsection{Domande e risposte del gruppo}}
+
+Il gruppo \emph{Bending Forks} aveva inviato in precedenza alcune domande per chiarire i dubbi sorti durante l\textquotesingle analisi del capitolato. L\textquotesingle azienda ha fornito risposte dettagliate, riportate di seguito.
+
+\hypertarget{formazione-e-supporto}{%
+\subsubsection{Formazione e supporto}}
+
+\textbf{Domanda:} Come avvengono o come si svolgono le sessioni di formazione di \emph{Uranion}? Si tratta solo di incontri formativi o comprendono anche una parte più pratica e di consulto?
+
+Non c\textquotesingle è un piano formativo fisso, perché dipende dalle competenze del gruppo e dai problemi che incontrerà. Quando lo scambio via \emph{chat} non basta, l\textquotesingle azienda organizza una \emph{call} dedicata. Una volta disponibile l\textquotesingle{}\emph{hardware}, potrà organizzare un \emph{workshop} in presenza di una giornata o di mezza giornata. All\textquotesingle avvio del progetto ci sarà un incontro introduttivo sulle tecnologie scelte e sulle eventuali esigenze di formazione. L\textquotesingle azienda non farà il progetto al posto del gruppo, ma lo aiuterà a sbloccarsi, e si aspetta che il gruppo studi la documentazione e faccia prove in autonomia.
+
+L\textquotesingle{}\emph{hardware} sarà fornito in quantità sufficiente per lavorare a coppie o individualmente. Se il gruppo sceglie un solo prodotto, il \emph{budget} sarà interamente destinato a quello, con più unità disponibili. Con dubbi fondati si possono ordinare due prodotti da confrontare, con meno unità per ciascuno. La lista della presentazione è un punto di partenza e non una lista chiusa, ma il costo del dispositivo deve restare accettabile per un utente finale.
+
+\hypertarget{cancellazione-delleco-e-gestione-di-piuxf9-dispositivi}{%
+\subsubsection{Cancellazione dell\textquotesingle eco e gestione di più dispositivi}}
+
+\textbf{Domanda:} Nel flusso descritto nel capitolato volevamo chiarire come e cosa fanno i vari stadi: il processo di eliminazione dell\textquotesingle eco e di \emph{beamforming} che avviene dopo la \emph{wake word} deve avvenire sul \emph{server} ponte o sull\textquotesingle{}\emph{hardware}? Se ci sono più dispositivi nella stanza, come dovrebbe essere gestito l\textquotesingle{}\emph{input}?
+
+Normalmente ci sarà un dispositivo per stanza. Se però due dispositivi sentono lo stesso comando, devono evitare di eseguirlo due volte, ad esempio dando la precedenza al primo che lo intercetta. L\textquotesingle azienda si aspetta una sorta di studio di usabilità in un contesto reale, senza dover risolvere tutti i problemi nella prima iterazione.
+
+L\textquotesingle eco è un problema soprattutto quando due dispositivi comunicano tra loro. Risolverlo lato \emph{server} è accettabile, tenendo conto del costo di elaborazione in ottica di scalabilità; se l\textquotesingle{}\emph{hardware} offre funzioni integrate per l\textquotesingle eco, tanto meglio. Il gruppo non deve spendere quasi tutto il tempo su questo punto: se il problema si rivela troppo complesso, va presentato all\textquotesingle azienda con le prove fatte, e si deciderà caso per caso se risolverlo o accettare una limitazione.
+
+\hypertarget{documentazione-dellhardware}{%
+\subsubsection{\texorpdfstring{Documentazione dell\textquotesingle{}\emph{hardware}}{Documentazione dell\textquotesingle hardware}}}
+
+\textbf{Domanda:} È disponibile una documentazione o una scheda tecnica dell\textquotesingle{}\emph{hardware} che mettete a disposizione?
+
+La documentazione dipende dall\textquotesingle{}\emph{hardware} scelto, e nella scelta conta anche la documentazione disponibile: un componente senza documentazione adeguata non è una buona scelta, anche se ha le caratteristiche migliori.
+
+\hypertarget{risorse-per-i-servizi-ai}{%
+\subsubsection{\texorpdfstring{Risorse per i servizi \emph{AI}}{Risorse per i servizi AI}}}
+
+\textbf{Domanda:} Per i servizi esterni mettete a disposizione chiavi \emph{API} o crediti per i \emph{provider AI cloud}, oppure una \emph{VPS} su cui far girare un \emph{LLM} locale?
+
+Per richieste motivate l\textquotesingle azienda fornisce ciò che serve: chiavi \emph{API}, \emph{account} dedicati, risorse \emph{cloud}, \emph{VPS}, macchine virtuali, servizi \emph{serverless}. Vuole però capire se ogni risorsa serve solo allo sviluppo e quali sarebbero i costi in produzione. Va evitato il \emph{vendor lock-in}: ad esempio è sconsigliato \emph{AWS Lambda}, perché costringerebbe chi usa la versione \emph{open source} a restare su \emph{AWS}.
+
+Un \emph{LLM} locale veloce come i servizi \emph{cloud} richiede \emph{hardware} costoso: un \emph{server} con \emph{GPU H100} o \emph{L40S} costa da 4-5 euro l\textquotesingle ora in su. Il caso di un utente con un \emph{Mac} da 16-32 GB di memoria unificata che esegue un modello piccolo si può invece supportare.
+
+Il prodotto deve funzionare con le \emph{API} standard compatibili con \emph{OpenAI} (\emph{OpenAI}, \emph{Ollama}, \emph{DeepSeek}). I \emph{provider} differiscono soprattutto nel modo di richiamare i \emph{tool}: si può partire dai più noti, e se funziona con \emph{ChatGPT} e \emph{Anthropic} l\textquotesingle azienda è soddisfatta.
+
+\hypertarget{estensibilituxe0-e-creazione-delle-skill}{%
+\subsubsection{\texorpdfstring{Estensibilità e creazione delle \emph{skill}}{Estensibilità e creazione delle skill}}}
+
+\textbf{Domanda:} Cosa si intende per "estendere il dispositivo oltre l\textquotesingle ecosistema di \emph{skill} che il produttore decide di supportare"? Chi crea le \emph{skill}: l\textquotesingle utente, oppure le implementiamo noi nel codice?
+
+Deve esistere uno standard per creare nuove \emph{skill}, in modo che un utente esperto possa scriversene una quando quella che gli serve manca. Un \emph{marketplace} delle \emph{skill} è fuori dallo scopo di questa fase; in futuro potrebbe nascere un archivio pubblico, come è successo con i \emph{provider} di \emph{Terraform}. Nella prima versione basta poter caricare le \emph{skill} sul dispositivo o sull\textquotesingle applicativo \emph{server} che fa da \emph{companion}, e il gruppo dovrà crearne almeno una per dimostrare il meccanismo.
+
+Gli ecosistemi di \emph{Amazon} e \emph{Google} impongono approvazioni e limitazioni: per oltre un anno non era permesso creare una \emph{skill} che richiamasse un altro \emph{agent}.
+
+\hypertarget{funzioni-della-dashboard}{%
+\subsubsection{\texorpdfstring{Funzioni della \emph{dashboard}}{Funzioni della dashboard}}}
+
+\textbf{Domanda:} Che tipo di \emph{dashboard} serve? Quali saranno le sue funzioni (creazione di nuovi utenti, famiglia, gestione di più dispositivi, gestione di più case, \emph{skill.md} e \emph{agent.md})?
+
+Non è prevista un\textquotesingle{}\emph{app} dedicata, ma un\textquotesingle interfaccia \emph{responsive} usabile anche dal telefono, con gestione di più utenti e più dispositivi, e se possibile di più case. È molto importante l\textquotesingle{}\emph{onboarding} del dispositivo, cioè la procedura con cui un oggetto appena arrivato viene collegato al \emph{backend}, che deve funzionare senza intoppi.
+
+L\textquotesingle{}\emph{onboarding} di dispositivi \emph{IoT} di terze parti (ad esempio lampade \emph{Tuya} o \emph{Philips}) è fuori dal perimetro di questa fase, ma l\textquotesingle architettura delle \emph{skill} deve permetterlo in futuro: una \emph{skill} potrebbe richiedere parametri di configurazione o reindirizzare l\textquotesingle utente a un sito esterno con una \emph{callback}. Più che sul numero di \emph{skill}, conviene lavorare su un\textquotesingle architettura estensibile.
+
+\hypertarget{domande-degli-altri-gruppi}{%
+\subsection{Domande degli altri gruppi}}
+
+Durante l\textquotesingle incontro l\textquotesingle azienda ha risposto anche alle domande degli altri gruppi presenti. Si riportano quelle rilevanti per il capitolato.
+
+\hypertarget{la-wake-word-va-rilevata-in-locale-il-firmware-deve-essere-tutto-in-rust}{%
+\subsubsection{\texorpdfstring{La \emph{wake word} va rilevata in locale? Il \emph{firmware} deve essere tutto in \emph{Rust}?}{La wake word va rilevata in locale? Il firmware deve essere tutto in Rust?}}}
+
+La \emph{wake word} va rilevata in locale, così che nulla vada su \emph{internet} finché non è stata riconosciuta; il resto può passare da \emph{internet}. Se l\textquotesingle{}\emph{hardware} ha un sistema operativo (\emph{Linux}, \emph{Android}), \emph{Rust} può essere usato solo per l\textquotesingle applicativo. Con una motivazione si può usare anche un altro linguaggio: \emph{Rust} è una proposta, non un vincolo.
+
+\hypertarget{come-va-progettato-il-contenitore-del-dispositivo}{%
+\subsubsection{Come va progettato il contenitore del dispositivo?}}
+
+Si può usare una scatola già pronta, quella del \emph{dev kit} se presente, oppure un disegno \emph{CAD} da stampare in 3D. Il minimo richiesto è una specifica delle dimensioni e del montaggio dell\textquotesingle{}\emph{hardware} (fori, viti). La preparazione per la stampa può farla l\textquotesingle azienda, che può anche mettere il gruppo in contatto con un \emph{designer} per completare il lavoro.
+
+\hypertarget{uxe8-possibile-scegliere-hardware-non-presente-nella-lista-della-presentazione}{%
+\subsubsection{\texorpdfstring{È possibile scegliere \emph{hardware} non presente nella lista della presentazione?}{È possibile scegliere hardware non presente nella lista della presentazione?}}}
+
+Sì, anche più di uno, purché la scelta sia motivata. Il costo deve permettere una produzione abbastanza economica: è accettabile un costo un po\textquotesingle{} superiore a quello dei prodotti già sul mercato, ma non di ordini di grandezza.
+
+\hypertarget{va-permesso-a-una-skill-di-comunicare-con-dispositivi-di-altri-ecosistemi-come-google-home}{%
+\subsubsection{\texorpdfstring{Va permesso a una \emph{skill} di comunicare con dispositivi di altri ecosistemi, come \emph{Google Home}?}{Va permesso a una skill di comunicare con dispositivi di altri ecosistemi, come Google Home?}}}
+
+Sì. L\textquotesingle azienda punta all\textquotesingle interoperabilità e al codice aperto proprio per non vincolare l\textquotesingle utente alle proprie scelte tecnologiche.
+
+\hypertarget{due-dispositivi-fossdot-devono-poter-comunicare-tra-loro}{%
+\subsubsection{\texorpdfstring{Due dispositivi \emph{Fossdot} devono poter comunicare tra loro?}{Due dispositivi Fossdot devono poter comunicare tra loro?}}}
+
+Sì, sul modello della funzione \emph{drop in} di \emph{Alexa}: un dispositivo ne contatta un altro e i due utenti parlano in tempo reale. Un flusso audio in tempo reale è l\textquotesingle obiettivo del progetto. Se risulta troppo complesso, la soluzione di ripiego è registrare un messaggio e riprodurlo sull\textquotesingle altro dispositivo.
+
+\hypertarget{lazienda-ha-una-sede-vicino-a-padova-per-gli-incontri-in-presenza}{%
+\subsubsection{L\textquotesingle azienda ha una sede vicino a Padova per gli incontri in presenza?}}
+
+L\textquotesingle azienda sta acquisendo una sede a Piove di Sacco, non ancora operativa. Per gli incontri in presenza si possono usare spazi dell\textquotesingle università, accordandosi con il professore, oppure una sala a noleggio.
+
+\hypertarget{che-peso-viene-dato-allhardware-rispetto-al-software}{%
+\subsubsection{\texorpdfstring{Che peso viene dato all\textquotesingle{}\emph{hardware} rispetto al \emph{software}?}{Che peso viene dato all\textquotesingle hardware rispetto al software?}}}
+
+Il dispositivo deve fare bene poche cose: riconoscere la \emph{wake word} e registrare l\textquotesingle audio in modo affidabile. La cancellazione dell\textquotesingle eco è gradita ma non obbligatoria. Conta che le funzioni presenti funzionino bene, e anche l\textquotesingle{}\emph{onboarding} deve essere molto curato. Avere poche \emph{skill} è accettabile se il flusso \emph{end-to-end} funziona.
+
+\hypertarget{varie-ed-eventuali}{%
+\subsection{Varie ed eventuali}}
+
+L\textquotesingle azienda ha comunicato che il tutor del progetto sarà Andrea Dorigo, al suo rientro dall\textquotesingle estero, e che il nome \emph{Fossdot} è provvisorio. Ha precisato inoltre che quest\textquotesingle anno potrà seguire \textbf{un solo gruppo}. Ha inoltre espresso la propria disponibilità a chiarire eventuali altri dubbi tramite \emph{email}.
+
+\hypertarget{decisioni-e-azioni}{%
+\section{Decisioni e azioni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=0.511\hsize\raggedright\arraybackslash}X>{\hsize=1.675\hsize\raggedright\arraybackslash}X>{\hsize=0.814\hsize\raggedright\arraybackslash}X}
+\rowcolor{bfblue}\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Descrizione}} & \textcolor{white}{\textbf{Assegnatario}} \\
+DEC-001 & Integrare le risposte ricevute nella valutazione dei capitolati, in vista della candidatura entro il 30/10/2026 & Tutti \\ \arrayrulecolor{bfline}\hline
+DEC-002 & Inviare il presente verbale all'azienda via \emph{email} per la firma, da restituire firmato entro il 30/10/2026 & Marco Beltrame \\ \arrayrulecolor{bfline}\hline
+DEC-003 & Inviare all'azienda via \emph{email} eventuali ulteriori domande sul capitolato & Tutti \\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{conclusioni}{%
+\section{Conclusioni}}
+
+L\textquotesingle incontro è stato molto utile per conoscere i rappresentanti di \emph{Uranion}, il loro modo di lavorare e le loro aspettative sul progetto. Inoltre è stato fondamentale per chiarire i dubbi emersi nel gruppo durante l\textquotesingle analisi del capitolato, in particolare sulla scelta dell\textquotesingle{}\emph{hardware}, sulle risorse messe a disposizione e sugli obiettivi dell\textquotesingle{}\emph{MVP}.
+
+I componenti del gruppo \emph{Bending Forks} ringraziano \emph{Uranion} per la disponibilità, la chiarezza e la professionalità dimostrate.
+
+\vspace{30pt}
+\begin{flushright}
+\textbf{Firma dell'azienda}\\[22pt]
+\rule{60mm}{0.5pt}
+\end{flushright}
+
+\end{document}

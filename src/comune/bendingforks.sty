@@ -1,0 +1,174 @@
+% =====================================================================
+%  bendingforks.sty - Stile comune dei documenti del gruppo Bending Forks
+%  (stesso aspetto dei verbali esterni: palette blu, copertina col logo,
+%  indice cliccabile, tabelle a righe alternate, segnaposto in rosso)
+%
+%  Uso in ogni documento:
+%     \usepackage{bendingforks}
+%     \bfsetup{titolo}{sottotitolo}{versione}{tipo}{uso}
+%     \bfredattori{...}  \bfverificatori{...}  \bfdestinatari{...}
+%     \bfabstract{...}
+%     \begin{document} \bfcopertina \bfindice ...
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bendingforks}[2026/10/26 Stile documenti Bending Forks]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[italian]{babel}
+\RequirePackage{libertinus}
+\RequirePackage{amssymb}
+\RequirePackage[a4paper,top=25mm,bottom=25mm,left=22mm,right=22mm,headheight=15pt]{geometry}
+\RequirePackage{graphicx}
+\RequirePackage[table]{xcolor}
+\RequirePackage{tabularx,array}
+\RequirePackage{titlesec}
+\RequirePackage{titletoc}
+\RequirePackage{microtype}
+\RequirePackage{fancyhdr}
+\RequirePackage{enumitem}
+\RequirePackage{needspace}
+\RequirePackage{etoolbox}
+\RequirePackage{lastpage}
+\RequirePackage[hidelinks]{hyperref}
+
+% ---------- Palette colori del gruppo ----------
+\definecolor{bfblue}{HTML}{1B3F9E}
+\definecolor{bfrow}{HTML}{F2F5FC}
+\definecolor{bfline}{HTML}{C9D1E6}
+\definecolor{bfhead}{HTML}{2E6BE6}
+
+% Segnaposto ancora da compilare (in rosso): prima dell'invio non deve restarne nessuno
+\newcommand{\ph}[1]{\textcolor{red}{[#1]}}
+
+% ---------- Impaginazione ----------
+\newcommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\setlist{topsep=2pt}
+\setlist[itemize]{leftmargin=1.3em,label=\textbullet}
+\setlist[enumerate]{leftmargin=1.6em}
+\setlength{\parindent}{0pt}
+\sloppy
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.45}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\titleformat{\section}{\LARGE\bfseries\color{bfblue}}{\thesection.}{0.3em}{}[{\color{bfblue}\vspace{-2pt}\titlerule[0.9pt]}]
+\titleformat{\subsection}{\Large\bfseries\color{bfblue}}{\thesubsection.}{0.3em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection.}{0.3em}{}
+% Evita titoli di sezione isolati in fondo alla pagina
+\pretocmd{\section}{\Needspace{6\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\titlespacing*{\subsubsection}{0pt}{10pt}{3pt}
+
+% Indice cliccabile con trattini
+\contentsmargin{2.2em}
+\newcommand{\bfleader}{\titlerule*[0.32em]{\textendash}}
+\titlecontents{section}[0pt]{\addvspace{5pt}\large\bfseries}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+\titlecontents{subsection}[1.2em]{\addvspace{0pt}}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+\titlecontents{subsubsection}[2.4em]{\addvspace{0pt}}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+
+% Tabelle: righe alternate e intestazione blu
+\newcommand{\bftable}{\rowcolors{2}{bfrow}{white}}
+\AtBeginEnvironment{tabularx}{\bftable}
+\newcommand{\bfh}[1]{\textcolor{white}{\textbf{#1}}}
+\newcommand{\bfheadrow}{\rowcolor{bfblue}}
+\newcommand{\bfsep}{\\ \arrayrulecolor{bfline}\hline}
+
+% ---------- Dati del documento ----------
+\newcommand{\bf@titolo}{}
+\newcommand{\bf@sottotitolo}{}
+\newcommand{\bf@versione}{}
+\newcommand{\bf@tipo}{}
+\newcommand{\bf@uso}{}
+\newcommand{\bf@redattori}{}
+\newcommand{\bf@verificatori}{}
+\newcommand{\bf@destinatari}{}
+\newcommand{\bf@abstract}{}
+\newcommand{\bfsetup}[5]{%
+  \renewcommand{\bf@titolo}{#1}\renewcommand{\bf@sottotitolo}{#2}%
+  \renewcommand{\bf@versione}{#3}\renewcommand{\bf@tipo}{#4}\renewcommand{\bf@uso}{#5}%
+  \hypersetup{pdftitle={#1 - Bending Forks},pdfauthor={Bending Forks}}}
+% Più nomi: separarli con \\ & (vedi esempi nei documenti)
+\newcommand{\bfredattori}[1]{\renewcommand{\bf@redattori}{#1}}
+\newcommand{\bfverificatori}[1]{\renewcommand{\bf@verificatori}{#1}}
+\newcommand{\bfdestinatari}[1]{\renewcommand{\bf@destinatari}{#1}}
+\newcommand{\bfabstract}[1]{\renewcommand{\bf@abstract}{#1}}
+
+% Intestazioni e piè di pagina
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily\bfseries\color{bfhead}\textls[120]{BENDING FORKS}}
+\fancyhead[R]{\footnotesize\sffamily\bf@titolo\ifx\bf@versione\empty\else\ -- v\bf@versione\fi}
+\fancyfoot[C]{\small Pagina \thepage\ di \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0.9pt}
+
+% ---------- Copertina ----------
+\newcommand{\bfcopertina}{%
+\begin{titlepage}
+\centering
+\vspace*{4mm}
+\includegraphics[width=105mm]{logo-bending-forks-trasparente.png}\\[4mm]
+\underline{bending.forks.swe@gmail.com}
+
+\vspace{36mm}
+{\fontsize{24}{28}\selectfont\bfseries \bf@titolo\par}
+\vspace{4mm}
+{\Large\color{bfblue} \bf@sottotitolo\par}
+
+\vfill
+\begin{tabular}[t]{r|l}
+\textbf{Redattori} & \bf@redattori \\
+\textbf{Verificatori} & \bf@verificatori \\
+\end{tabular}
+\hspace{10mm}
+\begin{tabular}[t]{r|l}
+\textbf{Versione} & \bf@versione \\
+\textbf{Tipo} & \bf@tipo \\
+\textbf{Uso} & \bf@uso \\
+\textbf{Destinatari} & \bf@destinatari \\
+\end{tabular}
+
+\vspace{12mm}
+{\large\emph{\textbf{Abstract dei contenuti:}}}\\[1mm]
+\begin{minipage}{150mm}\centering \bf@abstract\end{minipage}
+\vspace*{6mm}
+\end{titlepage}}
+
+% ---------- Indice ----------
+\newcommand{\bfindice}{%
+\vspace*{2mm}
+{\fontsize{22}{26}\selectfont\bfseries Indice\par}
+\vspace{6mm}
+\@starttoc{toc}
+\newpage}
+
+% Indice delle tabelle (facoltativo)
+\newcommand{\bfindicetabelle}{%
+\vspace*{2mm}
+{\fontsize{18}{22}\selectfont\bfseries Elenco delle tabelle\par}
+\vspace{4mm}
+\@starttoc{lot}
+\newpage}
+
+% ---------- Registro delle versioni ----------
+% Uso: \begin{bfregistro} 1.0.0 & 2026-10-30 & Nome & Descrizione \bfsep \end{bfregistro}
+% (chi verifica aggiunge una propria riga, non c'è la colonna Verificatore)
+\newenvironment{bfregistro}{%
+\section{Registro delle versioni}
+\par\noindent\bftable
+\tabularx{\linewidth}{>{\hsize=0.70\hsize\raggedright\arraybackslash}X>{\hsize=0.85\hsize\raggedright\arraybackslash}X>{\hsize=1.05\hsize\raggedright\arraybackslash}X>{\hsize=1.40\hsize\raggedright\arraybackslash}X}
+\bfheadrow\bfh{Versione} & \bfh{Data} & \bfh{Autore} & \bfh{Descrizione} \\}
+{\endtabularx\par\medskip}
+
+% ---------- Firma ----------
+\newcommand{\bffirma}[2]{%
+\begin{minipage}[t]{0.45\textwidth}
+\textbf{#1}\\[18pt]
+\rule{55mm}{0.5pt}\\[2pt]
+\small #2
+\end{minipage}}
+
+\endinput

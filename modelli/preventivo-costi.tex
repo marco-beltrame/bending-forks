@@ -1,0 +1,151 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{bendingforks}
+
+% =====================================================================
+%  PREVENTIVO DEI COSTI E ASSUNZIONE DEGLI IMPEGNI - documentazione esterna
+%  Vincoli: costo totale >= 12.000 €, 80-95 ore produttive per persona
+%  (7 persone: da 560 a 665 ore totali). Tutti devono ricoprire tutti i ruoli.
+%  I numeri in rosso sono la distribuzione indicativa delle slide:
+%  vanno sostituiti con quella decisa dal gruppo. Date AAAA-MM-GG.
+% =====================================================================
+\bfsetup{Preventivo dei Costi e Assunzione degli Impegni}{Capitolato C3 -- Fossdot}{0.1.0}{Documento}{Esterno}
+\bfredattori{\ph{Nome Cognome}}
+\bfverificatori{\ph{Nome Cognome}}
+\bfdestinatari{\emph{Prof. Tullio Vardanega} \\ & \emph{Prof. Riccardo Cardin}}
+\bfabstract{Preventivo economico e orario del gruppo \emph{Bending Forks} per la realizzazione del capitolato C3 \emph{Fossdot} proposto da \emph{Uranion}: ripartizione delle ore per ruolo e per membro, costo totale, analisi delle disponibilità e assunzione formale degli impegni.}
+
+\begin{document}
+\bfcopertina
+\bfindice
+
+\begin{bfregistro}
+0.1.0 & \ph{2026-10-27} & \ph{Nome Cognome} & Creazione della struttura del documento \bfsep
+\end{bfregistro}
+
+% =====================================================================
+\section{Introduzione}
+
+\subsection{Capitolato selezionato}
+Il presente documento riporta il preventivo dei costi e gli impegni assunti dal gruppo \emph{Bending Forks} per il capitolato C3 \emph{Fossdot}, proposto dall'azienda \emph{Uranion}.
+
+\subsection{Periodo di progetto stimato}
+\begin{itemize}
+\tightlist
+\item \textbf{Inizio:} \ph{AAAA-MM-GG} (aggiudicazione prevista il 2026-11-03)
+\item \textbf{Revisione RTB:} \ph{AAAA-MM-GG}
+\item \textbf{Revisione PB:} \ph{AAAA-MM-GG}
+\item \textbf{Consegna finale prevista:} \ph{AAAA-MM-GG}
+\end{itemize}
+
+% =====================================================================
+\section{Ripartizione dei ruoli preventivata}
+
+\subsection{Distribuzione delle ore per ruolo}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=1.3\hsize\raggedright\arraybackslash}X>{\hsize=0.9\hsize\centering\arraybackslash}X>{\hsize=0.9\hsize\centering\arraybackslash}X>{\hsize=0.9\hsize\centering\arraybackslash}X}
+\bfheadrow\bfh{Ruolo} & \bfh{Ore} & \bfh{Costo orario} & \bfh{Costo} \bfsep
+Responsabile & \ph{60} & 30\,€ & \ph{1.800\,€} \bfsep
+Amministratore & \ph{70} & 20\,€ & \ph{1.400\,€} \bfsep
+Analista & \ph{100} & 25\,€ & \ph{2.500\,€} \bfsep
+Progettista & \ph{120} & 25\,€ & \ph{3.000\,€} \bfsep
+Programmatore & \ph{180} & 15\,€ & \ph{2.700\,€} \bfsep
+Verificatore & \ph{65} & 15\,€ & \ph{975\,€} \bfsep
+\textbf{Totale} & \textbf{\ph{595}} & -- & \textbf{\ph{12.375\,€}} \bfsep
+\end{tabularx}
+\end{center}
+
+\ph{Commento: motivare il peso dei ruoli (ad es. più ore di Programmatore e Verificatore per la parte hardware e firmware).}
+
+\subsection{Ore per membro e per ruolo}
+Ogni membro ricopre tutti i ruoli nel corso del progetto. Sigle: Re = Responsabile, Am = Amministratore, An = Analista, Pt = Progettista, Pr = Programmatore, Ve = Verificatore.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=1.9\hsize\raggedright\arraybackslash}X*{6}{>{\hsize=0.65\hsize\centering\arraybackslash}X}>{\hsize=0.75\hsize\centering\arraybackslash}X}
+\bfheadrow\bfh{Membro} & \bfh{Re} & \bfh{Am} & \bfh{An} & \bfh{Pt} & \bfh{Pr} & \bfh{Ve} & \bfh{Totale} \bfsep
+Marco Beltrame & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{85} \bfsep
+Lorenzo Milanese & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{85} \bfsep
+Filippo Rampazzo & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{85} \bfsep
+Nicholas Salmaso & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{85} \bfsep
+Luca Stangherlin & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{85} \bfsep
+Aldo Toffoli & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{85} \bfsep
+Matteo Wu & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{} & \ph{85} \bfsep
+\textbf{Totale} & \ph{60} & \ph{70} & \ph{100} & \ph{120} & \ph{180} & \ph{65} & \textbf{\ph{595}} \bfsep
+\end{tabularx}
+\end{center}
+
+\subsection{Rotazione dei ruoli pianificata}
+\ph{Ogni quanto ruotano i ruoli (ad es. a ogni sprint di due settimane), con quale criterio e come si garantisce che redattore e verificatore di un documento siano persone diverse.}
+
+\subsection{Copertura dei ruoli}
+\ph{Conferma che ogni membro ricopre ogni ruolo almeno una volta, con rimando alla tabella precedente.}
+
+% =====================================================================
+\section{Preventivo economico}
+
+\subsection{Costo per ruolo}
+Vedi la tabella della sezione 2.1.
+
+\subsection{Costo per periodo}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=1.4\hsize\raggedright\arraybackslash}X>{\hsize=0.8\hsize\centering\arraybackslash}X>{\hsize=0.8\hsize\centering\arraybackslash}X}
+\bfheadrow\bfh{Periodo} & \bfh{Ore} & \bfh{Costo} \bfsep
+Fino alla RTB & \ph{ore} & \ph{€} \bfsep
+Dalla RTB alla PB & \ph{ore} & \ph{€} \bfsep
+\textbf{Totale} & \textbf{\ph{595}} & \textbf{\ph{12.375\,€}} \bfsep
+\end{tabularx}
+\end{center}
+
+\subsection{Costo totale preventivato}
+Il costo totale preventivato è di \textbf{\ph{12.375\,€}} per \textbf{\ph{595}} ore produttive. Questo importo costituisce il limite superiore invalicabile del costo del progetto.
+
+% =====================================================================
+\section{Analisi delle disponibilità}
+
+\subsection{Impegni accademici dei membri}
+\ph{Esami e sessioni, lezioni con obbligo di frequenza, ecc.}
+
+\subsection{Altri impegni rilevanti}
+\ph{Lavoro, stage, altri impegni personali che riducono la disponibilità.}
+
+\subsection{Calendario condiviso delle disponibilità}
+\ph{Dove si trova il calendario (ad es. Google Calendar del gruppo) e come viene aggiornato.}
+
+\subsection{Periodi critici}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=0.9\hsize\raggedright\arraybackslash}X>{\hsize=1.4\hsize\raggedright\arraybackslash}X>{\hsize=0.7\hsize\raggedright\arraybackslash}X}
+\bfheadrow\bfh{Periodo} & \bfh{Motivo} & \bfh{Membri coinvolti} \bfsep
+\ph{AAAA-MM-GG / AAAA-MM-GG} & \ph{Sessione invernale d'esami} & \ph{Tutti} \bfsep
+\ph{AAAA-MM-GG / AAAA-MM-GG} & \ph{Vacanze di Natale} & \ph{Tutti} \bfsep
+\end{tabularx}
+\end{center}
+
+% =====================================================================
+\section{Assunzione formale degli impegni}
+
+\subsection{Ore garantite per membro}
+Ciascun membro del gruppo \emph{Bending Forks} si impegna a garantire il seguente numero di ore produttive.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=1.1\hsize\raggedright\arraybackslash}X>{\hsize=0.6\hsize\centering\arraybackslash}X>{\hsize=0.6\hsize\centering\arraybackslash}X>{\hsize=0.7\hsize\centering\arraybackslash}X}
+\bfheadrow\bfh{Membro} & \bfh{Matricola} & \bfh{Ore garantite} & \bfh{Firma} \bfsep
+Marco Beltrame & 2111021 & \ph{85} & \bfsep
+Lorenzo Milanese & 2117110 & \ph{85} & \bfsep
+Filippo Rampazzo & 2101097 & \ph{85} & \bfsep
+Nicholas Salmaso & 2080038 & \ph{85} & \bfsep
+Luca Stangherlin & 2137996 & \ph{85} & \bfsep
+Aldo Toffoli & 2113202 & \ph{85} & \bfsep
+Matteo Wu & 2075514 & \ph{85} & \bfsep
+\end{tabularx}
+\end{center}
+
+\subsection{Scadenza ultima di consegna prevista}
+Il gruppo si impegna a completare il progetto entro il \textbf{\ph{AAAA-MM-GG}}.
+
+\subsection{Firma del responsabile}
+\vspace{20pt}
+\noindent\bffirma{Il Responsabile del gruppo:}{\ph{Nome Cognome}}
+
+\end{document}

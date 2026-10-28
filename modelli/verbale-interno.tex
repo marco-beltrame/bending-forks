@@ -1,0 +1,127 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{bendingforks}
+
+% =====================================================================
+%  VERBALE INTERNO - template
+%  Nome file consigliato: AAAA-MM-GG_verbale-interno.tex (o VI-N-AAAA-MM-GG)
+%  Sostituire N con il numero progressivo e tutti i segnaposto in rosso.
+% =====================================================================
+\bfsetup{Verbale Interno N. \ph{N}}{Riunione interna del \ph{AAAA-MM-GG}}{1.0.0}{Verbale Interno}{Interno}
+\bfredattori{\ph{Nome Cognome}}
+\bfverificatori{\ph{Nome Cognome}}
+\bfdestinatari{\emph{Gruppo Bending Forks} \\ & \emph{Prof. Tullio Vardanega} \\ & \emph{Prof. Riccardo Cardin}}
+\bfabstract{Resoconto della riunione interna del gruppo \emph{Bending Forks} del giorno \ph{AAAA-MM-GG}, riguardante \ph{argomento principale}.}
+
+\begin{document}
+\bfcopertina
+\bfindice
+
+\begin{bfregistro}
+1.0.0 & \ph{AAAA-MM-GG} & \ph{Redattore} & Creazione e redazione del documento \bfsep
+\end{bfregistro}
+
+% ---------- Informazioni generali ----------
+\section{Informazioni generali}
+
+\subsection{Durata e luogo}
+\begin{itemize}
+\tightlist
+\item \textbf{Data:} \ph{AAAA-MM-GG}
+\item \textbf{Inizio:} \ph{HH:MM}
+\item \textbf{Fine:} \ph{HH:MM}
+\item \textbf{Luogo / Modalità:} \ph{Virtuale, tramite Discord / In presenza, aula}
+\end{itemize}
+
+\subsection{Partecipanti}
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=1.2\hsize\raggedright\arraybackslash}X>{\hsize=1.0\hsize\centering\arraybackslash}X>{\hsize=1.0\hsize\centering\arraybackslash}X>{\hsize=0.8\hsize\centering\arraybackslash}X}
+\bfheadrow\bfh{Nome e Cognome} & \bfh{Ruolo Progetto} & \bfh{Ruolo Riunione} & \bfh{Presenza} \bfsep
+Marco Beltrame & \ph{--} & \ph{Partecipante} & $\blacksquare$ Presente \bfsep
+Lorenzo Milanese & \ph{--} & \ph{Partecipante} & $\blacksquare$ Presente \bfsep
+Filippo Rampazzo & \ph{--} & \ph{Partecipante} & $\blacksquare$ Presente \bfsep
+Nicholas Salmaso & \ph{--} & \ph{Partecipante} & $\blacksquare$ Presente \bfsep
+Luca Stangherlin & \ph{--} & \ph{Partecipante} & $\blacksquare$ Presente \bfsep
+Aldo Toffoli & \ph{--} & \ph{Partecipante} & $\blacksquare$ Presente \bfsep
+Matteo Wu & \ph{--} & \ph{Partecipante} & $\blacksquare$ Presente \bfsep
+\end{tabularx}
+\end{center}
+% Per un assente: $\square$ Assente, e aggiungerlo qui sotto con la motivazione.
+\textbf{Assenti giustificati:} \ph{Nessuno / Nome -- motivazione}
+
+% ---------- Ordine del giorno ----------
+\Needspace{8\baselineskip}
+\section{Ordine del giorno}
+\begin{enumerate}
+\tightlist
+\item \ph{Argomento 1}
+\item \ph{Argomento 2}
+\item Varie ed eventuali
+\end{enumerate}
+
+% ---------- Discussione e decisioni ----------
+\Needspace{8\baselineskip}
+\section{Discussione e decisioni}
+
+\subsection{\ph{Argomento 1}}
+\textbf{Discussione:} \ph{Sintesi della discussione: problemi emersi, alternative valutate. Massimo 3-5 righe per un argomento semplice.}
+
+\begin{itemize}
+\item[$\checkmark$] \textbf{VI-\ph{N}-01} \ph{Decisione chiara e tracciabile.}
+
+\textbf{Motivazione:} \ph{Breve giustificazione tecnica o organizzativa.} \\
+\textbf{Responsabile attuazione:} \ph{Nome Cognome} \\
+\textbf{Scadenza:} \ph{AAAA-MM-GG}
+\end{itemize}
+
+\subsection{\ph{Argomento 2}}
+\textbf{Discussione:} \ph{...}
+
+\begin{itemize}
+\item[$\checkmark$] \textbf{VI-\ph{N}-02} \ph{Decisione.}
+
+\textbf{Motivazione:} \ph{...} \\
+\textbf{Responsabile attuazione:} \ph{Nome Cognome} \\
+\textbf{Scadenza:} \ph{AAAA-MM-GG}
+\end{itemize}
+
+\subsection{Varie ed eventuali}
+\ph{Eventuali punti emersi fuori dall'ordine del giorno, oppure ``Nessuna''.}
+
+% ---------- Azioni da intraprendere ----------
+\Needspace{12\baselineskip}
+\section{Azioni da intraprendere (TODO)}
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=0.60\hsize\raggedright\arraybackslash}X>{\hsize=1.70\hsize\raggedright\arraybackslash}X>{\hsize=0.85\hsize\raggedright\arraybackslash}X>{\hsize=0.75\hsize\centering\arraybackslash}X>{\hsize=0.60\hsize\centering\arraybackslash}X}
+\bfheadrow\bfh{ID} & \bfh{Descrizione} & \bfh{Responsabile} & \bfh{Scadenza} & \bfh{Priorità} \bfsep
+VI-\ph{N}-01 & \ph{Azione} & \ph{Nome} & \ph{AAAA-MM-GG} & \ph{Alta} \bfsep
+VI-\ph{N}-02 & \ph{Azione} & \ph{Nome} & \ph{AAAA-MM-GG} & \ph{Media} \bfsep
+\end{tabularx}
+\end{center}
+
+% ---------- Tracciamento ----------
+\Needspace{8\baselineskip}
+\section{Tracciamento decisioni per Changelog}
+Collegamento tra le decisioni della riunione e le modifiche alla documentazione:
+\begin{itemize}
+\tightlist
+\item \textbf{Decisione VI-\ph{N}-01} $\rightarrow$ \ph{Documento e sezione modificati}
+\item \textbf{Decisione VI-\ph{N}-02} $\rightarrow$ \ph{...}
+\end{itemize}
+
+% ---------- Prossima riunione ----------
+\Needspace{8\baselineskip}
+\section{Pianificazione prossima riunione}
+\begin{itemize}
+\tightlist
+\item \textbf{Data proposta:} \ph{AAAA-MM-GG}
+\item \textbf{Ora prevista:} \ph{HH:MM}
+\item \textbf{Luogo / Canale:} \ph{Discord}
+\item \textbf{OdG preliminare:} \ph{Argomenti principali}
+\end{itemize}
+
+% ---------- Firme ----------
+\vspace{30pt}
+\noindent\bffirma{Firma del Redattore:}{\ph{Nome Cognome}}\hfill
+\bffirma{Firma del Moderatore:}{\ph{Nome Cognome}}
+
+\end{document}

@@ -1,0 +1,299 @@
+%! con: Ergon Informatica
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{libertinus}
+\usepackage{amssymb}
+\usepackage[a4paper,top=25mm,bottom=25mm,left=22mm,right=22mm,headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{tabularx,array}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{bfblue}{HTML}{1B3F9E}
+\definecolor{bfrow}{HTML}{F2F5FC}
+\definecolor{bfline}{HTML}{C9D1E6}
+\definecolor{bfhead}{HTML}{2E6BE6}
+% Segnaposto ancora da compilare (in rosso)
+\newcommand{\ph}[1]{\textcolor{red}{[#1]}}
+\newcommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\setlist{topsep=2pt}
+\setlist[itemize]{leftmargin=1.3em,label=\textbullet}
+\setlist[enumerate]{leftmargin=1.6em}
+\setlength{\parindent}{0pt}
+\sloppy
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.45}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\titleformat{\section}{\LARGE\bfseries\color{bfblue}\raggedright}{\thesection.}{0.3em}{}[{\color{bfblue}\vspace{-2pt}\titlerule[0.9pt]}]
+\titleformat{\subsection}{\Large\bfseries\color{bfblue}\raggedright}{\thesubsection.}{0.3em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\raggedright}{\thesubsubsection.}{0.3em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\titlespacing*{\subsubsection}{0pt}{10pt}{3pt}
+
+% Indice: numeri con punto, trattini fino al numero di pagina
+\contentsmargin{2.2em}
+\newcommand{\bfleader}{\titlerule*[0.32em]{\textendash}}
+\titlecontents{section}[0pt]{\addvspace{5pt}\large\bfseries}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+\titlecontents{subsection}[1.2em]{\addvspace{0pt}}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+\titlecontents{subsubsection}[2.4em]{\addvspace{0pt}}{\thecontentslabel.\ }{}{\hspace{0.4em}\bfleader\contentspage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily\bfseries\color{bfhead}\textls[120]{BENDING FORKS}}
+\fancyhead[R]{\footnotesize\sffamily Riunione con Ergon Informatica}
+\fancyfoot[C]{\small Pagina \thepage}
+\renewcommand{\headrulewidth}{0.9pt}
+
+\newcommand{\bftable}{\rowcolors{2}{bfrow}{white}}
+\usepackage{etoolbox}
+\AtBeginEnvironment{tabularx}{\bftable}
+\graphicspath{{../../InfoGruppo/}{../InfoGruppo/}{InfoGruppo/}}
+
+\begin{document}
+
+% ---------- Copertina ----------
+\begin{titlepage}
+\centering
+\vspace*{4mm}
+\includegraphics[width=105mm]{logo-bending-forks-trasparente.png}\\[4mm]
+\underline{bending.forks.swe@gmail.com}
+
+\vspace{48mm}
+{\fontsize{27}{32}\selectfont\bfseries Riunione con Ergon Informatica\par}
+
+\vfill
+\begin{tabular}[t]{r|l}
+\textbf{Responsabile} & \ph{Nome Cognome}\\
+\textbf{Redattore} & Marco Beltrame\\
+\textbf{Verificatore} & \ph{Nome Cognome}\\
+\end{tabular}
+\hspace{14mm}
+\begin{tabular}[t]{r|l}
+\textbf{Versione} & 1.1.0 \\
+\textbf{Tipo} & Verbale Esterno \\
+\textbf{Destinatari} & \emph{Ergon Informatica Srl} \\
+ & \emph{Prof. Tullio Vardanega} \\
+ & \emph{Prof. Riccardo Cardin} \\
+\end{tabular}
+
+\vspace{12mm}
+{\large\emph{\textbf{Abstract dei contenuti:}}}\\[1mm]
+\begin{minipage}{150mm}\centering Resoconto della riunione esterna tra il gruppo Bending Forks e l'azienda Ergon Informatica del giorno 22/10/2026, riguardante il capitolato C7 Smart Dashboard.\end{minipage}
+\vspace*{6mm}
+\end{titlepage}
+
+% ---------- Indice ----------
+\vspace*{2mm}
+{\fontsize{22}{26}\selectfont\bfseries Indice\par}
+\vspace{6mm}
+\makeatletter\@starttoc{toc}\makeatother
+\newpage
+
+% ---------- Contenuto ----------
+\hypertarget{registro-delle-versioni}{%
+\section{Registro delle versioni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=0.60\hsize\raggedright\arraybackslash}X>{\hsize=0.70\hsize\raggedright\arraybackslash}X>{\hsize=1.10\hsize\raggedright\arraybackslash}X>{\hsize=1.60\hsize\raggedright\arraybackslash}X}
+\rowcolor{bfblue}\textcolor{white}{\textbf{Versione}} & \textcolor{white}{\textbf{Data}} & \textcolor{white}{\textbf{Autore}} & \textcolor{white}{\textbf{Descrizione}} \\
+1.0.0 & 25/10/2026 & Marco Beltrame & Creazione e redazione iniziale del documento \\ \arrayrulecolor{bfline}\hline
+1.0.1 & 26/10/2026 & Aldo Toffoli & Revisione \\ \arrayrulecolor{bfline}\hline
+1.1.0 & 26/10/2026 & Marco Beltrame & Riorganizzazione del documento secondo la struttura comune dei verbali esterni \\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{informazioni-generali}{%
+\section{Informazioni generali}}
+
+\hypertarget{durata-e-luogo}{%
+\subsection{Durata e luogo}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Data:} 2026-10-22
+\item
+  \textbf{Inizio:} 14:00
+\item
+  \textbf{Fine:} 14:30
+\item
+  \textbf{Modalità:} virtuale, tramite Microsoft Teams
+\end{itemize}
+
+Il seguente documento contiene il resoconto della riunione esterna del gruppo \emph{Bending Forks} con l\textquotesingle azienda \emph{Ergon Informatica} sul capitolato C7 \emph{Smart Dashboard}.
+
+\hypertarget{partecipanti}{%
+\subsection{Partecipanti}}
+
+\hypertarget{interni}{%
+\subsubsection{Interni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}}
+\rowcolor{bfblue}\textcolor{white}{\textbf{Nome e Cognome}} & \textcolor{white}{\textbf{Presente}} & \textcolor{white}{\textbf{Assente}} \\
+Marco Beltrame & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Lorenzo Milanese & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Filippo Rampazzo & $\square$ & $\blacksquare$ \\ \arrayrulecolor{bfline}\hline
+Nicholas Salmaso & $\square$ & $\blacksquare$ \\ \arrayrulecolor{bfline}\hline
+Luca Stangherlin & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Aldo Toffoli & $\blacksquare$ & $\square$ \\ \arrayrulecolor{bfline}\hline
+Matteo Wu & $\square$ & $\blacksquare$ \\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{esterni}{%
+\subsubsection{Esterni}}
+
+\begin{itemize}
+\tightlist
+\item
+  Gianluca Carlesso, referente (\emph{Ergon Informatica})
+\end{itemize}
+
+\hypertarget{contenuto-della-riunione}{%
+\section{Contenuto della riunione}}
+
+\hypertarget{ordine-del-giorno}{%
+\subsection{Ordine del giorno}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Domande sulle tecnologie suggerite nel capitolato
+\item
+  Domande sui requisiti della \emph{dashboard} e sull\textquotesingle assistente \emph{AI}
+\item
+  Modalità degli incontri e supporto da parte dell\textquotesingle azienda
+\item
+  Motivazioni del progetto e passi successivi
+\item
+  Varie ed eventuali
+\end{enumerate}
+
+\hypertarget{riassunto}{%
+\subsection{Riassunto}}
+
+Il gruppo ha posto al referente di \emph{Ergon Informatica} le domande preparate e inviate in precedenza via \emph{email}, più alcune emerse durante l\textquotesingle incontro, e l\textquotesingle azienda ha risposto a tutte. Il prodotto deve restare su un insieme di \emph{widget} predefiniti, l\textquotesingle applicazione \emph{mobile} può essere una \emph{web app responsive} e l\textquotesingle azienda fornisce le chiavi \emph{API} con credito per gli \emph{LLM}. Le conoscenze di economia aziendale sono marginali e l\textquotesingle azienda aiuterà a interpretare i dati. Al termine il gruppo ha comunicato le prossime scadenze: candidature entro il 30 ottobre e aggiudicazione a inizio novembre.
+
+\hypertarget{domande-inviate-via-email}{%
+\subsection{\texorpdfstring{Domande inviate via \emph{email}}{Domande inviate via email}}}
+
+Il gruppo \emph{Bending Forks} aveva inviato in precedenza via \emph{email} alcune domande per chiarire i dubbi sorti durante l\textquotesingle analisi del capitolato. L\textquotesingle azienda ha fornito risposte dettagliate, riportate di seguito.
+
+\hypertarget{esportazione-della-composizione-della-dashboard}{%
+\subsubsection{\texorpdfstring{Esportazione della composizione della \emph{dashboard}}{Esportazione della composizione della dashboard}}}
+
+\textbf{Domanda:} Sarebbe da aggiungere la possibilità di esportare la stessa composizione della \emph{dashboard} (essendo già salvate e associate al singolo utente), oltre ai contenuti interni?
+
+Sì, può essere utile salvare la configurazione della \emph{dashboard} in un \emph{file JSON}, come fanno alcuni prodotti commerciali, che più spesso usano \emph{XML}. In questo modo diventa semplice duplicare una \emph{dashboard} o condividerla, applicando il \emph{file} con la sua definizione.
+
+\hypertarget{versione-mobile}{%
+\subsubsection{\texorpdfstring{Versione \emph{mobile}}{Versione mobile}}}
+
+\textbf{Domanda:} Dato che la versione \emph{mobile} è indicata per la sola consultazione, bisogna considerare qualche personalizzazione (ad esempio l\textquotesingle ordine dei \emph{widget} che vengono mostrati)? Per la consultazione dei dati su \emph{smartphone} è sufficiente una \emph{web app responsive} che si adatti allo schermo o richiedete un\textquotesingle applicazione a parte?
+
+No, è sufficiente una \emph{web app responsive} che si adatta alla dimensione dello schermo. Su schermi piccoli i \emph{widget} della \emph{dashboard} vengono disposti in sequenza, dall\textquotesingle alto a sinistra fino in basso a destra.
+
+\hypertarget{controlli-di-coerenza-delle-risposte-dellai}{%
+\subsubsection{\texorpdfstring{Controlli di coerenza delle risposte dell\textquotesingle{}\emph{AI}}{Controlli di coerenza delle risposte dell\textquotesingle AI}}}
+
+\textbf{Domanda:} Riguardo all\textquotesingle indicazione per cui "l\textquotesingle AI deve operare con opportuni controlli sulla coerenza delle risposte generate", che controlli di coerenza richiedete nello specifico?
+
+Si tratta di \emph{test} mirati in cui all\textquotesingle assistente \emph{AI} si pongono domande predefinite e se ne valutano le risposte. Servono perché i modelli tendono ad assumere o dedurre informazioni, anche valori numerici, e in una piattaforma di \emph{Business Intelligence} un valore dedotto significa mostrare dati sbagliati. Non esistono \emph{test} che diano certezza assoluta, quindi vanno fatte prove pratiche.
+
+\hypertarget{chiavi-api-per-gli-llm}{%
+\subsubsection{\texorpdfstring{Chiavi \emph{API} per gli \emph{LLM}}{Chiavi API per gli LLM}}}
+
+\textbf{Domanda:} Per l\textquotesingle uso di modelli come \emph{OpenAI} o \emph{Claude}, l\textquotesingle azienda ci fornirà le chiavi o credenziali \emph{API} con un abbonamento interno o dobbiamo organizzarci noi con soluzioni accessibili o gratuite?
+
+\emph{Ergon Informatica} fornisce le chiavi \emph{API} con del credito caricato e le ricarica quando il credito finisce. L\textquotesingle azienda usa di solito \emph{GPT} o \emph{Claude}, ma il gruppo può sperimentare anche altri modelli: non è un vincolo.
+
+Gli \emph{LLM} eseguiti in locale (ad esempio con \emph{Ollama}) sono sconsigliati, perché richiedono un \emph{hardware} adeguato per dare risultati apprezzabili e il capitolato è già molto ampio.
+
+\hypertarget{modalituxe0-degli-incontri}{%
+\subsubsection{Modalità degli incontri}}
+
+\textbf{Domanda:} Gli incontri quindicinali di monitoraggio si terranno \emph{online} o in presenza?
+
+Per l\textquotesingle azienda è indifferente fare gli incontri a distanza o in presenza. Di solito si tengono a distanza, ma un incontro in presenza si può organizzare senza problemi, e verso la fine del progetto il gruppo potrebbe essere invitato in azienda.
+
+\hypertarget{domande-emerse-durante-lincontro}{%
+\subsection{Domande emerse durante l\textquotesingle incontro}}
+
+\hypertarget{in-quali-ambiti-lazienda-puuxf2-supportarci}{%
+\subsubsection{In quali ambiti l\textquotesingle azienda può supportarci?}}
+
+Non esiste una lista di ambiti: l\textquotesingle azienda può dare supporto in tutte le fasi del progetto. Conosce bene le tecnologie \emph{LLM} (\emph{OpenAI}, \emph{Claude}), mentre il \emph{database} suggerito fa parte di ciò che il progetto vuole esplorare, e gli eventuali problemi si affronteranno insieme.
+
+\hypertarget{il-database-suggerito-nel-capitolato-uxe8-affidabile-nel-lungo-periodo}{%
+\subsubsection{\texorpdfstring{Il \emph{database} suggerito nel capitolato è affidabile nel lungo periodo?}{Il database suggerito nel capitolato è affidabile nel lungo periodo?}}}
+
+Sì. Il \emph{database} è liberamente utilizzabile, con una licenza permissiva (probabilmente \emph{MIT}). La \emph{software house} che lo sviluppa e ne offre il supporto aziendale (\emph{DuckDB Labs}) è stata acquisita da \emph{Amazon Web Services} nell\textquotesingle agosto 2026, quindi il progetto non dovrebbe essere abbandonato nei prossimi anni. Nel capitolato sono comunque indicate anche altre alternative.
+
+\hypertarget{servono-conoscenze-di-economia-aziendale-per-il-progetto}{%
+\subsubsection{Servono conoscenze di economia aziendale per il progetto?}}
+
+Dal punto di vista dell\textquotesingle azienda sono marginali. Possono servire per capire cosa rappresentano i dati dei \emph{dataset} forniti. I prodotti di \emph{Business Intelligence} chiedono più o meno sempre gli stessi indicatori (fatturato lordo e netto, margine, costi), rappresentati in molti modi diversi. L\textquotesingle azienda aiuterà il gruppo a capire i dati da gestire.
+
+\hypertarget{chi-decide-quali-dati-rappresentare-nei-widget-e-come}{%
+\subsubsection{\texorpdfstring{Chi decide quali dati rappresentare nei \emph{widget} e come?}{Chi decide quali dati rappresentare nei widget e come?}}}
+
+L\textquotesingle utente parte da una pagina bianca, seleziona i dati che gli interessano (ad esempio il fatturato) e sceglie come rappresentarli, ad esempio con un grafico o una tabella.
+
+\hypertarget{perchuxe9-lazienda-ha-proposto-questo-progetto}{%
+\subsubsection{Perché l\textquotesingle azienda ha proposto questo progetto?}}
+
+\emph{Ergon Informatica} lavora nella \emph{Business Intelligence} da circa 15 anni, anche se il suo \emph{core business} è il software gestionale (\emph{ERP}), e ha da poco rinnovato il proprio modulo di \emph{BI}. Da anni si parla di \emph{self-BI}, cioè di utenti senza competenze tecniche che costruiscono \emph{dashboard} in autonomia, ma è sempre rimasta un miraggio: qualcuno doveva comunque scrivere le \emph{query} e conoscere come sono organizzati i dati del gestionale. Con l\textquotesingle{}\emph{AI} questo ruolo può essere coperto, e le aziende sentono il bisogno di un prodotto del genere.
+
+\hypertarget{nellanalisi-con-lassistente-ai-vanno-considerati-solo-eventi-interni-allazienda-o-anche-esterni}{%
+\subsubsection{\texorpdfstring{Nell\textquotesingle analisi con l\textquotesingle assistente \emph{AI} vanno considerati solo eventi interni all\textquotesingle azienda o anche esterni?}{Nell\textquotesingle analisi con l\textquotesingle assistente AI vanno considerati solo eventi interni all\textquotesingle azienda o anche esterni?}}}
+
+Il capitolato prevede solo dati interni. Considerare anche fattori esterni (ad esempio uno sciopero che spiega un calo degli incassi) può essere interessante, ma è da mettere in secondo piano, come funzionalità aggiuntiva se resta tempo.
+
+\hypertarget{lutente-o-lassistente-ai-possono-creare-nuovi-widget-o-modificare-quelli-esistenti}{%
+\subsubsection{\texorpdfstring{L\textquotesingle utente o l\textquotesingle assistente \emph{AI} possono creare nuovi \emph{widget} o modificare quelli esistenti?}{L\textquotesingle utente o l\textquotesingle assistente AI possono creare nuovi widget o modificare quelli esistenti?}}}
+
+L\textquotesingle azienda consiglia di restare su un insieme di \emph{widget} predefiniti. L\textquotesingle assistente \emph{AI} può aggiungere un \emph{widget} alla \emph{dashboard} e configurarne i dati, ma non personalizzarne il funzionamento.
+
+\hypertarget{varie-ed-eventuali}{%
+\subsection{Varie ed eventuali}}
+
+L\textquotesingle azienda ha espresso la propria disponibilità a chiarire eventuali altri dubbi tramite \emph{email}.
+
+\hypertarget{decisioni-e-azioni}{%
+\section{Decisioni e azioni}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\hsize=0.511\hsize\raggedright\arraybackslash}X>{\hsize=1.675\hsize\raggedright\arraybackslash}X>{\hsize=0.814\hsize\raggedright\arraybackslash}X}
+\rowcolor{bfblue}\textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Descrizione}} & \textcolor{white}{\textbf{Assegnatario}} \\
+DEC-001 & Inviare il presente verbale via \emph{email} all'indirizzo da cui è arrivata la richiesta, per la firma dell'azienda, da restituire entro il 30/10/2026 & Marco Beltrame \\ \arrayrulecolor{bfline}\hline
+DEC-002 & Integrare le risposte ricevute nella valutazione dei capitolati & Tutti \\ \arrayrulecolor{bfline}\hline
+\end{tabularx}
+\end{center}
+
+\hypertarget{conclusioni}{%
+\section{Conclusioni}}
+
+L\textquotesingle incontro è stato molto utile per conoscere il referente di \emph{Ergon Informatica}, il suo modo di lavorare e le aspettative dell\textquotesingle azienda sul progetto. Inoltre è stato fondamentale per chiarire i dubbi emersi nel gruppo durante l\textquotesingle analisi del capitolato, in particolare sul perimetro della \emph{dashboard}, sulla versione \emph{mobile} e sull\textquotesingle uso degli \emph{LLM}.
+
+I componenti del gruppo \emph{Bending Forks} ringraziano \emph{Ergon Informatica} per la disponibilità, la chiarezza e la professionalità dimostrate.
+
+\vspace{30pt}
+\begin{flushright}
+\textbf{Firma dell'azienda}\\[22pt]
+\rule{60mm}{0.5pt}
+\end{flushright}
+
+\end{document}
