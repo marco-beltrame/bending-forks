@@ -10,6 +10,8 @@ Ad ogni push su `main` una GitHub Action compila i sorgenti LaTeX e pubblica il 
 ```
 src/                     sorgenti dei documenti che finiscono sul sito
   comune/                stile comune (bendingforks.sty) e logo, usabili da tutti i .tex
+                         (il logo si trova sia come logo-bending-forks-trasparente.png sia come
+                         Assets/logo-bending-forks-trasparente.png, il percorso usato su Overleaf)
   candidatura/
     documenti/           lettera-di-presentazione.tex, valutazione-capitolati.tex, preventivo-costi.tex
     verbali-esterni/     AAAA-MM-GG_verbale-esterno-<azienda>.tex
